@@ -125,83 +125,6 @@ Each variable will store the icon's unicode value
     font-size: 1.25rem;
 }
 
-/* TYPOGRAPHY USED */
-
-h1:not(.text-sizes h1) {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 900;
-}
-
-h2:not(.text-sizes h2) {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    padding-bottom: 2rem;
-}
-
-.main-titles, section {
-    padding: 2rem;
-}
-
-.typography-section p:not(.lorem) {
-    font-size: 1.5rem;
-    max-width: 15rem;
-}
-
-.lorem {
-    max-width: 15rem;
-}
-
-.text-samples {
-    display: flex;
-    gap: 4rem;
-}
-
-.text-samples div {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.text-samples span {
-    font-size: 1.5rem;
-}
-
-.text-sizes {
-    line-height: 0.5rem;
-}
-
-/* COLOURS USED*/
-.colours-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem 1.5rem;
-    max-width: 60rem;
-    padding-left: 2rem;
-}
-
-.colour-element {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.colour {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    margin-bottom: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.colour-name {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
 
 /* Color Assignments */
 .colour--primary { background-color: var(--primary); }
@@ -218,19 +141,6 @@ h2:not(.text-sizes h2) {
 .colour--dropdown-hover { background-color: var(--dropdown-hover); }
 
 /* BUTTONS */
-.buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-}
-
-.buttons div {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    gap: 1rem;
-    align-items: center;
-}
 
 /* Base Button Styles */
 .button {
@@ -401,21 +311,6 @@ h2:not(.text-sizes h2) {
 }
 
 /* TEXT INPUTS / PASSWORD */
-
-.text-inputs-section h3 {
-    margin-bottom: 2rem;
-}
-
-.text-input__container {
-    margin-bottom: 4rem;
-}
-
-.password-inputs__container {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(3, auto);
-    gap: 1rem;
-}
 
 .password-input__container {
     margin-bottom: 1rem;
