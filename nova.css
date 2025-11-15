@@ -1,0 +1,895 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Karla", sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    padding: 2rem;
+    justify-self: center;
+}
+
+/*  COLOR VARIABLES */
+
+:root {
+    --primary: #6D3A80;
+    --primary-lighter: #A583B0;
+    --primary-darker: #3A1E46;
+    
+    --secondary: #258E89;
+    --secondary-lighter: #8BBFBC;
+    --secondary-darker: #134845;
+    
+    --success: #24AF53;
+    --success-lighter: #8DD5A3;
+    --success-darker: #125B2B;
+    
+    --info: #2196F3;
+    --info-lighter: #90C0E5;
+    --info-darker: #0D47A1;
+    
+    --error: #C23232;
+    --error-lighter: #DB8E8E;
+    --error-darker: #6A1A1A;
+    
+    --warning: #E4BD3D;
+    --warning-lighter: #ECD78F;
+    --warning-darker: #8C711F;
+    
+    --disabled: #969696;
+    --disabled-lighter: #C4C4C4;
+    --disabled-darker: #5E5E5E;
+    --disabled-textfield: #E8E8E8;
+    --disabled-toggle: #D5D5D5;
+    --disabled-toggle-2: #B7B7B7;
+    
+    --text-color: #000;
+    --input-bg: #FFF;
+    --dropdown-hover: #DEC6E8;
+    
+    --primary-hover: #896398;
+    --secondary-hover: #65ABA8;
+    --success-hover: #58c27b;
+    --error-hover: #CE6060;
+    --warning-hover: #e4c766;
+    --info-hover: #6CA3CF;
+}
+
+/* ICON SYSTEM
+   
+Icons will be defines as CSS variables.
+Icons are taken from FontAwesome and the variables will be created using the font awesome unicode.
+Font awesome has already been linked to my HTML head
+
+Font Awesome usually requires the <i class="fa.."> tag structure
+I researched online and found CSS pseudo elements for FontAwesome
+https://docs.fontawesome.com/web/add-icons/pseudo-elements
+
+Each variable will store the icon's unicode value
+ */
+
+:root {
+    --icon-house: "\f015";              /* fa-house */
+    --icon-settings: "\f013";           /* fa-gear */
+    --icon-arrow: "\f0a9";              /* fa-circle-arrow-right */
+    --icon-location: "\f3c5";           /* fa-location-dot */
+    --icon-tag: "\f02b";                /* fa-tag */
+    --icon-cloud: "\f0c2";              /* fa-cloud */
+}
+
+.icon {
+    font-family: "Font Awesome 6 Free"; /* Font awesome font-family for the browser to render the unicode as the icon */
+    font-weight: 900;
+    font-style: normal;
+    line-height: 1;
+}
+
+/* Will use the unicode value as the content */
+.icon-house::before {
+    content: var(--icon-house);
+    
+}
+
+.icon-settings::before {
+    content: var(--icon-settings);
+}
+
+.icon-arrow::before {
+    content: var(--icon-arrow);
+}
+
+.icon-location::before {
+    content: var(--icon-location);
+}
+
+.icon-tag::before {
+    content: var(--icon-tag);
+}
+
+.icon-cloud::before {
+    content: var(--icon-cloud);
+}
+
+/* Customizable icon sized */
+.icon-sm {
+    font-size: 0.75rem;
+}
+
+.icon-md {
+    font-size: 1rem;
+}
+
+.icon-lg {
+    font-size: 1.25rem;
+}
+
+/* TYPOGRAPHY USED */
+
+h1:not(.text-sizes h1) {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+h2:not(.text-sizes h2) {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-bottom: 2rem;
+}
+
+.main-titles, section {
+    padding: 2rem;
+}
+
+.typography-section p:not(.lorem) {
+    font-size: 1.5rem;
+    max-width: 15rem;
+}
+
+.lorem {
+    max-width: 15rem;
+}
+
+.text-samples {
+    display: flex;
+    gap: 4rem;
+}
+
+.text-samples div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.text-samples span {
+    font-size: 1.5rem;
+}
+
+.text-sizes {
+    line-height: 0.5rem;
+}
+
+/* COLOURS USED*/
+.colours-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem 1.5rem;
+    max-width: 60rem;
+    padding-left: 2rem;
+}
+
+.colour-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.colour {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.colour-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Color Assignments */
+.colour--primary { background-color: var(--primary); }
+.colour--secondary { background-color: var(--secondary); }
+.colour--success { background-color: var(--success); }
+.colour--error { background-color: var(--error); }
+.colour--warning { background-color: var(--warning); }
+.colour--info { background-color: var(--info); }
+.colour--disabled { background-color: var(--disabled); }
+.colour--disabled-textfield { background-color: var(--disabled-textfield); }
+.colour--disabled-toggle { background-color: var(--disabled-toggle); }
+.colour--disabled-toggle-2 { background-color: var(--disabled-toggle-2); }
+.colour--white { background-color: var(--input-bg); }
+.colour--dropdown-hover { background-color: var(--dropdown-hover); }
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.buttons div {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Base Button Styles */
+.button {
+    border-radius: 50rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-size: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button:not(.button--icon-only) i {
+    padding-right: 0.5rem;
+}
+
+/* Button Focus State */
+.button:focus, .focus {
+    border: 2px dashed white;
+}
+
+.button--outline:focus {
+    border: 2px dashed currentColor;
+}
+
+/* Button color variants - Filled */
+
+.button--primary, .tag--primary,
+.button--secondary, .tag--secondary,
+.button--success, .tag--success,
+.button--error, .tag--error,
+.button--warning, .tag--warning,
+.button--info, .tag--info,
+.button--disabled, .tag--disabled {
+    color: var(--input-bg);
+}
+
+.button--primary, .tag--primary { background: var(--primary); }
+.button--secondary, .tag--secondary { background: var(--secondary); }
+.button--success, .tag--success { background: var(--success); }
+.button--error, .tag--error { background: var(--error); }
+.button--warning, .tag--warning { background: var(--warning); }
+.button--info, .tag--info { background: var(--info); }
+.button--disabled, .tag--disabled {
+    background: var(--disabled);
+    cursor: not-allowed;
+}
+
+.button--primary:hover, .button--primary--hover { background: var(--primary-hover); }
+.button--secondary:hover, .button--secondary--hover { background: var(--secondary-hover); }
+.button--success:hover, .button--success--hover { background: var(--success-hover); }
+.button--error:hover, .button--error--hover { background: var(--error-hover); }
+.button--warning:hover, .button--warning--hover { background: var(--warning-hover); }
+.button--info:hover, .button--info--hover { background: var(--info-hover); }
+
+/* Button outline variants */
+.button--outline {
+    background-color: transparent;
+    color: inherit;
+}
+
+.button--primary.button--outline, .tag--primary.tag--outline {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.button--secondary.button--outline, .tag--secondary.tag--outline {
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.button--success.button--outline, .tag--success.tag--outline {
+    color: var(--success);
+    border-color: var(--success);
+}
+
+.button--error.button--outline, .tag--error.tag--outline {
+    color: var(--error);
+    border-color: var(--error);
+}
+
+.button--warning.button--outline, .tag--warning.tag--outline {
+    color: var(--warning);
+    border-color: var(--warning);
+}
+
+.button--info.button--outline, .tag--info.tag--outline {
+    color: var(--info);
+    border-color: var(--info);
+}
+
+.button--disabled.button--outline, .tag--disabled.tag--outline {
+    color: var(--disabled);
+    border-color: var(--disabled);
+}
+
+/* Button outline Hover States */
+.button--outline:hover {
+    background-color: transparent;
+}
+
+.button--primary.button--outline:hover, .hover--primary {
+    color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.button--secondary.button--outline:hover, .hover--secondary {
+    color: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+}
+
+.button--success.button--outline:hover, .hover-success {
+    color: var(--success-hover);
+    border-color: var(--success-hover);
+}
+
+.button--error.button--outline:hover, .hover-error {
+    color: var(--error-hover);
+    border-color: var(--error-hover);
+}
+
+.button--warning.button--outline:hover, .hover-warning {
+    color: var(--warning-hover);
+    border-color: var(--warning-hover);
+}
+
+.button--info.button--outline:hover, .hover-info {
+    color: var(--info-hover);
+    border-color: var(--info-hover);
+}
+
+/* TAGS */
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0.25rem;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tag.tag--icon-only i:not(.fa-xmark),
+.tag.tag--outline.tag--icon-only i:not(.fa-xmark) {
+    padding-right: 0;
+}
+
+.tag:not(.tag--icon-only) i, .tag--outline:not(.tag--icon-only) i {
+    padding-right: 0.75rem;
+}
+
+.tag i.fa-xmark, .tag--outline i.fa-xmark {
+    padding-right: 0;
+    padding-left: 0.75rem;
+}
+
+/* Tag outline variants */
+.tag--outline {
+    background: transparent;
+    border: 2px solid currentColor;
+}
+
+/* TEXT INPUTS / PASSWORD */
+
+.text-inputs-section h3 {
+    margin-bottom: 2rem;
+}
+
+.text-input__container {
+    margin-bottom: 4rem;
+}
+
+.password-inputs__container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+}
+
+.password-input__container {
+    margin-bottom: 1rem;
+}
+
+.password-input__container label {
+    font-weight: 700;
+    padding: 0 0 0.2rem 1rem;
+}
+
+.password-input__container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.password-input__label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.password-input__input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.8rem;
+    width: auto;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s;
+}
+
+.password-input__input::placeholder {
+    color: #BABABA;
+}
+
+/* Input with icon container (to hide or show password) */
+.input-with-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.input-with-icon .password-input__input {
+    padding-right: 3rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--text-color);
+}
+
+.toggle-password:hover {
+    color: var(--primary) !important;
+}
+
+/* Input states */
+.password-input__input:focus {
+    outline: 2px solid var(--primary);
+}
+
+.password-input__input--error, 
+.password-input__input--error:focus {
+    outline: 2px solid var(--error);
+}
+
+.password-input__input--error,
+.password-input__caption--error {
+    color: var(--error);
+}
+
+.password-input__input--success, 
+.password-input__input--success:focus {
+    outline: 2px solid var(--success);
+}
+
+.password-input__input--success,
+.password-input__caption--success {
+    color: var(--success);
+}
+
+.password-input__input:disabled {
+    background: var(--disabled-textfield);
+    cursor: not-allowed;
+}
+
+.password-input__input:disabled::placeholder {
+    color: #b9b6b6;
+}
+
+/* Input Helper Text */
+.password-input__caption {
+    font-size: 0.75rem;
+    padding-left: 1rem;
+}
+
+/* CHECKBOXES, RADIO BUTTONS, TOGGLES */
+.toggles, .radio-buttons, .checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 10rem;
+}
+
+.checkbox, .radio, .toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox label, .radio label, .toggle label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+label input {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+/* Base Trigger Styles */
+.crt-trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 0.0575rem solid #ccc;
+    border-radius: 0.333rem;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .crt-trigger:not(.toggle-trigger)::before {
+    content: "";
+    width: 75%;
+    height: 75%;
+    display: flex;
+    background: var(--primary);
+    border-radius: inherit;
+}
+
+/* Checkbox styles */
+.checkbox-trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.checkbox-trigger i {
+    display: none;
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+}
+
+.checkbox input:checked + .checkbox-trigger i {
+    display: block;
+}
+
+.checkbox input:disabled + .checkbox-trigger, .radio input:disabled + .radio-trigger {
+    background-color: var(--disabled-toggle);
+    cursor: not-allowed;
+}
+
+.checkbox input:disabled + .checkbox-trigger::before {
+    background-color: var(--disabled-toggle-2);
+}
+
+/* Radio button styles */
+.radio-trigger.crt-trigger {
+    border-radius: 50%;
+}
+
+/* Toggle styles */
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle-trigger.crt-trigger {
+    background: var(--primary);
+    width: 3.6rem;
+    border-radius: 4rem;
+    justify-content: left;
+    padding: 4px;
+    transition: background 0.3s ease;
+}
+
+.toggle input:checked + .toggle-trigger {
+    background: white;
+    justify-content: right;
+}
+
+.toggle input:checked + .toggle-trigger::before {
+    background: var(--primary);
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.toggle-trigger.crt-trigger::before {
+    content: "";
+    width: 1.4rem;
+    height: 1.4rem;
+    display: flex;
+    background: white;
+    border-radius: inherit;
+    transition: transform 0.3s ease;
+}
+
+.toggle input:disabled + .toggle-trigger, .toggle input:disabled:checked + .toggle-trigger::before {
+    background: var(--disabled-toggle);
+    cursor: not-allowed;
+}
+
+.toggle input:disabled:checked + .toggle-trigger, .toggle input:disabled + .toggle-trigger::before {
+    background: var(--disabled-toggle-2);
+}
+
+/* DROPDOWN */
+
+section .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.custom-select {
+    position: relative;
+    border-radius: 0.8rem;
+    width: 250px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: var(--input-bg);
+    border-radius: 0.8rem;
+    border: none;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #000 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #000 transparent;
+    top: 7px;
+}
+
+.select-items div, .select-selected {
+    color: #000;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+.select-selected.select-arrow-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.select-items {
+    position: absolute;
+    background-color: var(--input-bg);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: var(--dropdown-hover);
+}
+
+/* CARDS */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    max-width: 20rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card__image-container {
+    height: 18rem;
+    overflow: hidden;
+    border-radius: inherit;
+    margin-bottom: 2rem;
+}
+
+.card__image-container .card__image {
+    width: 100%;
+}
+
+.card__title {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.card__text {
+    margin-bottom: 2rem;
+}
+
+.card__actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Card title colors */
+.card .primary { color: var(--primary); }
+.card .secondary { color: var(--secondary); }
+.card .success { color: var(--success); }
+.card .error { color: var(--error); }
+.card .warning { color: var(--warning); }
+.card .info { color: var(--info); }
+
+/* Card outline colors */
+.outline--primary { border-color: var(--primary); }
+.outline--secondary { border-color: var(--secondary); }
+.outline--success { border-color: var(--success); }
+.outline--error { border-color: var(--error); }
+.outline--warning { border-color: var(--warning); }
+.outline--info { border-color: var(--info); }
+
+/* ICON SYSTEM SECTION */
+.icon-system-section {
+    padding: 2rem;
+}
+
+.icon-intro {
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+}
+
+.icon-variables-container {
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+
+.icon-variables-box {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    max-width: 60rem;
+}
+
+.icon-variables-title {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.icon-variable-code {
+    display: block;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.icon-section-title {
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.icons-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    max-width: 60rem;
+    padding: 2rem;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.13);
+    transition: all 0.3s ease;
+}
+
+.icon-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--dropdown-hover);
+}
+
+.icon-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.icon-item:hover i {
+    color: var(--primary-darker);
+}
+
+.icon-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.icon-usage-container {
+    padding: 2rem;
+    max-width: 60rem;
+}
+
+.icon-usage-title {
+    margin-bottom: 1rem;
+}
+
+.icon-usage-code {
+    display: block;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.icon-usage-code-spaced {
+    margin-bottom: 1.5rem;
+}
