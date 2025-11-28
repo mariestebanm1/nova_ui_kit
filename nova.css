@@ -222,7 +222,7 @@ Each variable will store the icon's unicode value
 
 /* Button outline variants */
 .button--outline {
-    background-color: transparent;
+    background-color: #FFF;
     color: inherit;
 }
 
@@ -324,7 +324,7 @@ Each variable will store the icon's unicode value
 
 /* Tag outline variants */
 .tag--outline {
-    background: transparent;
+    background: #FFF;
     border: 2px solid currentColor;
 }
 
@@ -373,6 +373,7 @@ Each variable will store the icon's unicode value
 
 .input-with-icon .password-input__input {
     padding-right: 3rem;
+    background-color: #FFF;
 }
 
 .toggle-password {
@@ -470,6 +471,7 @@ label input {
     border: 0.0575rem solid #ccc;
     border-radius: 0.333rem;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
 }
 
 input:checked + .crt-trigger:not(.toggle-trigger)::before {
@@ -653,6 +655,7 @@ section .grid {
     overflow: hidden;
     padding: 1.5rem;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
 }
 
 .card:hover {
@@ -759,6 +762,7 @@ section .grid {
     border-radius: 1rem;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.13);
     transition: all 0.3s ease;
+    background-color: #FFF;
 }
 
 .icon-item:hover {
