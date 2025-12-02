@@ -363,6 +363,7 @@ Each variable will store the icon's unicode value
 /* Button outline variants */
 .button--outline {
     color: inherit;
+    background-color: transparent;
 }
 
 .button--primary.button--outline, .tag--primary.tag--outline {
@@ -463,7 +464,7 @@ Each variable will store the icon's unicode value
 
 /* Tag outline variants */
 .tag--outline {
-    background: #FFF;
+    background: transparent;
     border: 2px solid currentColor;
 }
 
