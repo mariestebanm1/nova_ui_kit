@@ -610,6 +610,7 @@ label input {
     border: 0.0575rem solid #ccc;
     border-radius: 0.333rem;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
 }
 
 input:checked + .crt-trigger:not(.toggle-trigger)::before {
