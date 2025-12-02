@@ -143,6 +143,146 @@ Each variable will store the icon's unicode value
     font-size: 1.25rem;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                               UTILITY CLASSES                              */
+/* -------------------------------------------------------------------------- */
+
+/* Base Spacing Scale Variables */
+:root {
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem; 
+  --spacing-3: 2rem; 
+  --spacing-4: 3rem; 
+}
+
+/* Margin All Sides (.m-*) */
+.m-1 { margin: var(--spacing-1) }
+.m-2 { margin: var(--spacing-2) }
+.m-3 { margin: var(--spacing-3) }
+.m-4 { margin: var(--spacing-4) }
+
+/* Margin Top (.mt-*) */
+.mt-1 { margin-top: var(--spacing-1) }
+.mt-2 { margin-top: var(--spacing-2) }
+.mt-3 { margin-top: var(--spacing-3) }
+.mt-4 { margin-top: var(--spacing-4) }
+
+/* Margin Bottom (.mb-*) */
+.mb-1 { margin-bottom: var(--spacing-1) }
+.mb-2 { margin-bottom: var(--spacing-2) }
+.mb-3 { margin-bottom: var(--spacing-3) }
+.mb-4 { margin-bottom: var(--spacing-4) }
+
+/* Margin Left (.ml-*) */
+.ml-1 { margin-left: var(--spacing-1) }
+.ml-2 { margin-left: var(--spacing-2) }
+.ml-3 { margin-left: var(--spacing-3) }
+.ml-4 { margin-left: var(--spacing-4) }
+
+/* Margin Right (.mr-*) */
+.mr-1 { margin-right: var(--spacing-1) }
+.mr-2 { margin-right: var(--spacing-2) }
+.mr-3 { margin-right: var(--spacing-3) }
+.mr-4 { margin-right: var(--spacing-4) }
+
+/* Padding All Sides (.p-*) */
+.p-1 { padding: var(--spacing-1) }
+.p-2 { padding: var(--spacing-2) }
+.p-3 { padding: var(--spacing-3) }
+.p-4 { padding: var(--spacing-4) }
+
+/* Padding Top (.pt-*) */
+.pt-1 { padding-top: var(--spacing-1) }
+.pt-2 { padding-top: var(--spacing-2) }
+.pt-3 { padding-top: var(--spacing-3) }
+.pt-4 { padding-top: var(--spacing-4) }
+
+/* Padding Bottom (.pb-*) */
+.pb-1 { padding-bottom: var(--spacing-1) }
+.pb-2 { padding-bottom: var(--spacing-2) }
+.pb-3 { padding-bottom: var(--spacing-3) }
+.pb-4 { padding-bottom: var(--spacing-4) }
+
+/* Padding Left (.pl-*) */
+.pl-1 { padding-left: var(--spacing-1) }
+.pl-2 { padding-left: var(--spacing-2) }
+.pl-3 { padding-left: var(--spacing-3) }
+.pl-4 { padding-left: var(--spacing-4) }
+
+/* Padding Right (.pr-*) */
+.pr-1 { padding-right: var(--spacing-1) }
+.pr-2 { padding-right: var(--spacing-2) }
+.pr-3 { padding-right: var(--spacing-3) }
+.pr-4 { padding-right: var(--spacing-4) }
+
+/* Container Widths (Max-Width) */
+
+.container-sm { 
+    max-width: 400px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-md { 
+    max-width: 768px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-lg { 
+    max-width: 960px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-xl { 
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-full { 
+    width: 100%; 
+}
+
+/* 1. Parent (Container) Classes */
+
+.grid-2-col,
+.grid-3-col,
+.grid-4-col {
+    display: grid;
+    gap: 1.5rem; 
+}
+
+.grid-2-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4-col {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* These are applied to the direct children inside a .grid-* container */
+
+.span-2 {
+    /* Item spans 2 columns */
+    grid-column: span 2;
+}
+
+.span-3 {
+    /* Item spans 3 columns */
+    grid-column: span 3;
+}
+
+.span-4 {
+    /* Item spans 4 columns */
+    grid-column: span 4;
+}
+
 
 /* Color Assignments */
 .colour--primary { background-color: var(--primary); }
@@ -222,7 +362,6 @@ Each variable will store the icon's unicode value
 
 /* Button outline variants */
 .button--outline {
-    background-color: #FFF;
     color: inherit;
 }
 
@@ -471,7 +610,6 @@ label input {
     border: 0.0575rem solid #ccc;
     border-radius: 0.333rem;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
-    background-color: #FFF;
 }
 
 input:checked + .crt-trigger:not(.toggle-trigger)::before {
@@ -655,7 +793,6 @@ section .grid {
     overflow: hidden;
     padding: 1.5rem;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
-    background-color: #FFF;
 }
 
 .card:hover {
@@ -762,7 +899,6 @@ section .grid {
     border-radius: 1rem;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.13);
     transition: all 0.3s ease;
-    background-color: #FFF;
 }
 
 .icon-item:hover {
